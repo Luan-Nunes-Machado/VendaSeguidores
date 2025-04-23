@@ -76,7 +76,7 @@
   </main>
 
   <!-- TERCEIRA TELA: Pagamento -->
-  <main id="paymentScreen" class="max-w-4xl mx-auto p-6 mt-12 hidden">
+   <main id="paymentScreen" class="max-w-4xl mx-auto p-6 mt-12 hidden">
     <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-8">Escolha seu método de pagamento:</h1>
 
     <section class="bg-white p-6 rounded-lg shadow mb-6">
@@ -111,38 +111,54 @@
       </div>
     </section>
 
-    <!-- Comentários e Elogios -->
-    <section id="commentSection" class="bg-white p-6 rounded-lg shadow mt-6">
-      <h2 class="text-2xl font-semibold mb-4">Comentários e Elogios</h2>
-      
-      <!-- Lista de comentários -->
-      <div class="space-y-4">
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">João:</p>
-          <p>Excelente serviço! Luan foi super atencioso e a entrega foi bem rápida. Super recomendo!</p>
+    <!-- Comentários dos Clientes -->
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold text-center mb-6">O que nossos clientes estão dizendo:</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=200&h=200" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
+          <p class="font-semibold">@ju.vicente</p>
+          <p class="text-sm mt-2">Achei que era golpe, mas FUNCIONA mesmo! Em minutos meus seguidores aumentaram, Obrigado Luan.</p>
+          <div class="flex mt-2">
+            <span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span>
+          </div>
         </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Maria:</p>
-          <p>Muito feliz com os resultados! Luan, você arrasa! Atendimento top!</p>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?crop=faces&fit=crop&w=200&h=200" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
+          <p class="font-semibold">@joaofit</p>
+          <p class="text-sm mt-2">Ganhei selo de verificado em menos de 24h! Atendimento rápido e confiável.</p>
+          <div class="flex mt-2">
+            <span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span>
+          </div>
         </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Carlos:</p>
-          <p>Eu comprei o pacote de 10K seguidores e fiquei impressionado! Luan, parabéns pelo excelente serviço!</p>
-        </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Fernanda:</p>
-          <p>Luan, muito obrigada pelo atendimento! Meus seguidores chegaram rápido e a qualidade é ótima!</p>
-        </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Lucas:</p>
-          <p>Super recomendo! O Luan foi super eficiente e meu perfil está bombando agora. Muito obrigado!</p>
+        <div class="bg-white p-4 rounded-lg shadow">
+          <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=faces&fit=crop&w=200&h=200" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
+          <p class="font-semibold">@amandaSilva</p>
+          <p class="text-sm mt-2">Já é a 3ª vez que compro com o Luan! Sempre chega direitinho. Super recomendo.</p>
+          <div class="flex mt-2">
+            <span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span>
+          </div>
         </div>
       </div>
-
-      <!-- Campo para deixar comentário -->
-      <h3 class="text-xl font-semibold mt-6 mb-4">Deixe seu comentário:</h3>
-      <textarea id="comment" class="w-full p-4 border rounded" rows="4" placeholder="Escreva seu comentário..."></textarea>
-      <button onclick="submitComment()" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Enviar Comentário</button>
+    </section>
+    
+    <!-- Formulário de Comentário -->
+    <section class="bg-white p-6 rounded-lg shadow mt-8">
+      <h2 class="text-xl font-semibold">Deixe seu comentário:</h2>
+      <input type="text" class="w-full p-4 mt-4 border rounded" placeholder="Seu nome..." id="commentName" />
+      <textarea class="w-full p-4 mt-4 border rounded" placeholder="Deixe sua opinião sobre o serviço..." id="commentText"></textarea>
+      <div class="mt-4">
+        <label class="font-semibold">Avaliação: </label>
+        <div class="flex mt-2">
+          <span class="estrela" onclick="selectStar(1)"></span>
+          <span class="estrela" onclick="selectStar(2)"></span>
+          <span class="estrela" onclick="selectStar(3)"></span>
+          <span class="estrela" onclick="selectStar(4)"></span>
+          <span class="estrela" onclick="selectStar(5)"></span>
+        </div>
+      </div>
+      <button class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="submitComment()">Enviar Comentário</button>
+      <p id="commentFeedback" class="mt-4 text-green-500 hidden">Comentário enviado com sucesso! 🙌</p>
     </section>
   </main>
 
@@ -162,30 +178,14 @@
       alert("Chave Pix copiada!");
     }
 
-    function goToDataScreen() {
-      document.querySelector('main').classList.add('hidden');
-      document.getElementById('dataScreen').classList.remove('hidden');
+    function goToPayment() {
+      document.querySelector('main').style.display = 'none';
+      document.getElementById('paymentScreen').style.display = 'block';
     }
 
     function goBackToMenu() {
-      document.getElementById('paymentScreen').classList.add('hidden');
-      document.getElementById('dataScreen').classList.add('hidden');
-      document.querySelector('main').classList.remove('hidden');
-    }
-
-    function goToPayment() {
-      document.getElementById('dataScreen').classList.add('hidden');
-      document.getElementById('paymentScreen').classList.remove('hidden');
-    }
-
-    function submitComment() {
-      const comment = document.getElementById('comment').value;
-      if(comment) {
-        alert('Comentário enviado com sucesso!');
-        document.getElementById('comment').value = ''; // Limpar campo de comentário após envio
-      } else {
-        alert('Por favor, escreva um comentário antes de enviar.');
-      }
+      document.querySelector('main').style.display = 'block';
+      document.getElementById('paymentScreen').style.display = 'none';
     }
 
     document.getElementById('pix').addEventListener('click', function () {
@@ -201,6 +201,24 @@
       document.getElementById('qrCodeDetails').classList.remove('hidden');
       document.getElementById('pixDetails').classList.add('hidden');
     });
+
+    function selectStar(starNumber) {
+      let stars = document.querySelectorAll('.estrela');
+      for (let i = 0; i < stars.length; i++) {
+        if (i < starNumber) {
+          stars[i].classList.add('selected');
+        } else {
+          stars[i].classList.remove('selected');
+        }
+      }
+    }
+
+    function submitComment() {
+      document.getElementById('commentFeedback').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('commentFeedback').classList.add('hidden');
+      }, 3000);
+    }
 
     // Contador Regressivo
     let countdownTime = 600; // 10 minutos em segundos
