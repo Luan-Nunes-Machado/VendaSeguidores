@@ -19,16 +19,16 @@
   <main class="max-w-4xl mx-auto p-6">
     <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-8 animate-bounce">MENU TURBINA IMEDIATO ✅</h1>
 
-    <!-- Pacotes Populares -->
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Pacotes Populares -->
       <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
         <img src="https://cdn-icons-png.flaticon.com/512/1384/1384015.png" class="w-16 h-16 mb-4" alt="Pacote Instagram" />
         <h2 class="text-xl font-semibold">Pacotes Populares</h2>
         <ul class="mt-4 space-y-2">
-          <li><label><input type="checkbox" value="17.97" class="package" onchange="updateTotal()"> ✅  <span class="risco">R$29,90</span> <strong>R$17,97</strong> - 1000k seguidores</label></li>
-          <li><label><input type="checkbox" value="24.90" class="package" onchange="updateTotal()"> ✅ <span class="risco">R$39,90</span> <strong>R$24,90</strong> - 2500k seguidores</label></li>
-          <li><label><input type="checkbox" value="34.89" class="package" onchange="updateTotal()"> ✅ <span class="risco">R$49,90</span> <strong>R$34,89</strong> - 5000k seguidores</label></li>
-          <li><label><input type="checkbox" value="44.99" class="package" onchange="updateTotal()"> ✅ <span class="risco">R$59,90</span> <strong>R$44,99</strong> - 10000k seguidores</label></li>
+          <li><label><input type="checkbox" value="17.97" class="package" onchange="updateTotal()"> ✅  <span class="risco">R$29,90</span> <strong>R$17,97</strong> - 1000 seguidores</label></li>
+          <li><label><input type="checkbox" value="24.90" class="package" onchange="updateTotal()"> ✅ <span class="risco">R$39,90</span> <strong>R$24,90</strong> - 2500 seguidores</label></li>
+          <li><label><input type="checkbox" value="34.89" class="package" onchange="updateTotal()"> ✅ <span class="risco">R$49,90</span> <strong>R$34,89</strong> - 5000 seguidores</label></li>
+          <li><label><input type="checkbox" value="44.99" class="package" onchange="updateTotal()"> ✅ <span class="risco">R$59,90</span> <strong>R$44,99</strong> - 10000 seguidores</label></li>
         </ul>
       </div>
 
@@ -37,10 +37,11 @@
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" class="w-16 h-16 mb-4" alt="Promoção" />
         <h2 class="text-xl font-bold text-yellow-700">🔥 Promoção Especial (Hoje!)</h2>
         <ul class="mt-4 space-y-2">
-          <li><label><input type="checkbox" value="47.90" class="package" onchange="updateTotal()"> ✅ 57K seguidores   – <span class="risco">R$79,90</span> <strong>R$47,90</strong> (+ selo de verificado grátis!)</label></li>
-          <li><label><input type="checkbox" value="52.90" class="package" onchange="updateTotal()"> ✅ 107K seguidores  – <span class="risco">R$89,90</span> <strong>R$52,90</strong> (+ selo de verificado grátis!)</label></li>
-          <li><label><input type="checkbox" value="63.10" class="package" onchange="updateTotal()"> ✅ 130k seguidores  – <span class="risco">R$99,90</span> <strong>R$63,10</strong> (+ selo de verificado grátis!)</label></li>
-          <li><label><input type="checkbox" value="25.77" class="package" onchange="updateTotal()"> ✅ BOT de Reposição – <span class="risco">R$109,90</span> <strong>R$49,90</strong> (+ selo de verificado grátis!)</label></li>
+          <li><label><input type="checkbox" value="22.90" class="package" onchange="updateTotal()"> ✅ 7K seguidores – <strong>R$22,90</strong></label></li>
+          <li><label><input type="checkbox" value="27.90" class="package" onchange="updateTotal()"> ✅ 12K seguidores – <strong>R$27,90</strong> (+ selo de verificado grátis!)</label></li>
+          <li><label><input type="checkbox" value="32.90" class="package" onchange="updateTotal()"> ✅ 27K seguidores – <strong>R$32,90</strong> (+ selo de verificado grátis!)</label></li>
+          <li><label><input type="checkbox" value="47.90" class="package" onchange="updateTotal()"> ✅ 57K seguidores – <strong>R$47,90</strong> (+ selo de verificado grátis!)</label></li>
+          <li><label><input type="checkbox" value="52.90" class="package" onchange="updateTotal()"> ✅ 107K seguidores – <strong>R$52,90</strong> (+ selo de verificado grátis!)</label></li>
         </ul>
       </div>
     </section>
@@ -57,20 +58,17 @@
   <main id="paymentScreen" class="max-w-4xl mx-auto p-6 mt-12 hidden">
     <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-8">Escolha seu método de pagamento:</h1>
 
-    <!-- Métodos de pagamento -->
     <section class="bg-white p-6 rounded-lg shadow mb-6">
       <div>
         <button id="pix" class="w-full text-lg text-gray-700 py-2 border rounded hover:bg-gray-100">Pagamento via PIX</button>
         <button id="qrCode" class="w-full text-lg text-gray-700 py-2 border rounded hover:bg-gray-100 mt-2">Pagamento via QR Code</button>
       </div>
 
-      <!-- Exibição do método selecionado -->
       <div id="paymentMethod" class="mt-4 text-center text-xl font-semibold text-blue-600 hidden">
         Você escolheu: <span id="selectedPayment"></span>
       </div>
     </section>
 
-    <!-- Chave PIX e QR Code -->
     <section id="pixDetails" class="bg-white p-6 rounded-lg shadow mt-6 hidden">
       <h2 class="text-2xl font-semibold">Pagamento via Pix</h2>
       <p class="mt-2">Use a chave Pix abaixo para concluir sua compra:</p>
@@ -91,37 +89,37 @@
       </div>
     </section>
 
-    <!-- Comentários -->
+    <!-- Comentários dos Clientes -->
     <section class="mt-12">
       <h2 class="text-2xl font-bold text-center mb-6">O que nossos clientes estão dizendo:</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="bg-white p-4 rounded-lg shadow">
-          <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
-          <p class="font-semibold">@juliana.makeup</p>
-          <p class="text-sm mt-2">Achei que era golpe, mas FUNCIONA mesmo! Em minutos meus seguidores aumentaram.</p>
+          <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?crop=faces&fit=crop&w=200&h=200" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
+          <p class="font-semibold">@ju.vicente</p>
+          <p class="text-sm mt-2">Achei que era golpe, mas FUNCIONA mesmo! Em minutos meus seguidores aumentaram, Obrigado Luan.</p>
           <div class="flex mt-2">
             <span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span>
           </div>
         </div>
         <div class="bg-white p-4 rounded-lg shadow">
-          <img src="https://randomuser.me/api/portraits/men/52.jpg" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
-          <p class="font-semibold">@joaofitness</p>
+          <img src="https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?crop=faces&fit=crop&w=200&h=200" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
+          <p class="font-semibold">@joaofit</p>
           <p class="text-sm mt-2">Ganhei selo de verificado em menos de 24h! Atendimento rápido e confiável.</p>
           <div class="flex mt-2">
             <span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span>
           </div>
         </div>
         <div class="bg-white p-4 rounded-lg shadow">
-          <img src="https://randomuser.me/api/portraits/women/33.jpg" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
-          <p class="font-semibold">@luhdigital</p>
-          <p class="text-sm mt-2">Já é a 3ª vez que compro! Sempre chega direitinho. Super recomendo.</p>
+          <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?crop=faces&fit=crop&w=200&h=200" class="w-12 h-12 rounded-full mb-2" alt="Usuário">
+          <p class="font-semibold">@amandaSilva</p>
+          <p class="text-sm mt-2">Já é a 3ª vez que compro com o Luan! Sempre chega direitinho. Super recomendo.</p>
           <div class="flex mt-2">
             <span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span><span class="estrela selected"></span>
           </div>
         </div>
       </div>
     </section>
-
+    
     <!-- Formulário de Comentário -->
     <section class="bg-white p-6 rounded-lg shadow mt-8">
       <h2 class="text-xl font-semibold">Deixe seu comentário:</h2>
@@ -140,7 +138,7 @@
     </section>
   </main>
 
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script>
     function updateTotal() {
       let total = 0;
@@ -175,7 +173,6 @@
       document.getElementById('pixDetails').classList.add('hidden');
     });
 
-    // Função para seleção das estrelas
     function selectStar(starNumber) {
       let stars = document.querySelectorAll('.estrela');
       for (let i = 0; i < stars.length; i++) {
