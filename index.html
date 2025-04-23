@@ -11,6 +11,7 @@
     .risco { text-decoration: line-through; color: #888; }
     .estrela::before { content: '⭐'; }
     .estrela.selected::before { color: gold; }
+    .hidden { display: none; }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -35,14 +36,16 @@
       <!-- Promoção Especial -->
       <div class="bg-yellow-100 p-6 rounded-lg shadow-lg border-l-4 border-yellow-500 hover:shadow-xl transition duration-300">
         <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" class="w-16 h-16 mb-4" alt="Promoção" />
-        <h2 class="text-xl font-bold text-yellow-700">🔥 Promoção Especial (Hoje!)</h2>
+        <h2 class="text-xl font-bold text-yellow-700">🔥 Promoção Especial</h2>
         <ul class="mt-4 space-y-2">
-          <li><label><input type="checkbox" value="22.90" class="package" onchange="updateTotal()"> ✅ 7K seguidores – <strong>R$22,90</strong></label></li>
-          <li><label><input type="checkbox" value="27.90" class="package" onchange="updateTotal()"> ✅ 12K seguidores – <strong>R$27,90</strong> (+ selo de verificado grátis!)</label></li>
           <li><label><input type="checkbox" value="32.90" class="package" onchange="updateTotal()"> ✅ 27K seguidores – <strong>R$32,90</strong> (+ selo de verificado grátis!)</label></li>
           <li><label><input type="checkbox" value="47.90" class="package" onchange="updateTotal()"> ✅ 57K seguidores – <strong>R$47,90</strong> (+ selo de verificado grátis!)</label></li>
           <li><label><input type="checkbox" value="52.90" class="package" onchange="updateTotal()"> ✅ 107K seguidores – <strong>R$52,90</strong> (+ selo de verificado grátis!)</label></li>
         </ul>
+        <!-- Contador Regressivo -->
+        <div class="mt-4 text-center">
+          <p class="text-lg font-semibold">Restam apenas: <span id="countdown" class="text-red-500 font-bold">10:00</span></p>
+        </div>
       </div>
     </section>
 
@@ -67,6 +70,7 @@
       <div id="paymentMethod" class="mt-4 text-center text-xl font-semibold text-blue-600 hidden">
         Você escolheu: <span id="selectedPayment"></span>
       </div>
+      <button onclick="goBackToMenu()" class="mt-4 px-6 py-2 bg-gray-500 text-white rounded hover:bg-gray-600">Voltar para o Menu</button>
     </section>
 
     <section id="pixDetails" class="bg-white p-6 rounded-lg shadow mt-6 hidden">
@@ -123,7 +127,8 @@
     <!-- Formulário de Comentário -->
     <section class="bg-white p-6 rounded-lg shadow mt-8">
       <h2 class="text-xl font-semibold">Deixe seu comentário:</h2>
-      <textarea class="w-full p-4 mt-4 border rounded" placeholder="Deixe sua opinião sobre o serviço..."></textarea>
+      <input type="text" class="w-full p-4 mt-4 border rounded" placeholder="Seu nome..." id="commentName" />
+      <textarea class="w-full p-4 mt-4 border rounded" placeholder="Deixe sua opinião sobre o serviço..." id="commentText"></textarea>
       <div class="mt-4">
         <label class="font-semibold">Avaliação: </label>
         <div class="flex mt-2">
@@ -134,7 +139,8 @@
           <span class="estrela" onclick="selectStar(5)"></span>
         </div>
       </div>
-      <button class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Enviar Comentário</button>
+      <button class="mt-4 px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" onclick="submitComment()">Enviar Comentário</button>
+      <p id="commentFeedback" class="mt-4 text-green-500 hidden">Comentário enviado com sucesso! 🙌</p>
     </section>
   </main>
 
@@ -157,6 +163,11 @@
     function goToPayment() {
       document.querySelector('main').style.display = 'none';
       document.getElementById('paymentScreen').style.display = 'block';
+    }
+
+    function goBackToMenu() {
+      document.querySelector('main').style.display = 'block';
+      document.getElementById('paymentScreen').style.display = 'none';
     }
 
     document.getElementById('pix').addEventListener('click', function () {
@@ -183,6 +194,25 @@
         }
       }
     }
+
+    function submitComment() {
+      document.getElementById('commentFeedback').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('commentFeedback').classList.add('hidden');
+      }, 3000);
+    }
+
+    // Contador Regressivo
+    let countdownTime = 600; // 10 minutos em segundos
+    const countdownElement = document.getElementById('countdown');
+    setInterval(function () {
+      if (countdownTime > 0) {
+        countdownTime--;
+        let minutes = Math.floor(countdownTime / 60);
+        let seconds = countdownTime % 60;
+        countdownElement.textContent = `${minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+      }
+    }, 1000);
   </script>
 </body>
 </html>
