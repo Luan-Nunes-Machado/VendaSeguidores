@@ -12,6 +12,7 @@
     .estrela::before { content: '⭐'; }
     .estrela.selected::before { color: gold; }
     .hidden { display: none; }
+    .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -117,25 +118,40 @@
       
       <!-- Lista de comentários -->
       <div class="space-y-4">
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">João:</p>
-          <p>Excelente serviço! Luan foi super atencioso e a entrega foi bem rápida. Super recomendo!</p>
+        <div class="p-4 bg-gray-100 rounded flex items-start">
+          <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="João" class="avatar mr-4" />
+          <div>
+            <p class="font-semibold">João Silva:</p>
+            <p>Excelente serviço! Luan foi super atencioso e a entrega foi bem rápida. Super recomendo!</p>
+          </div>
         </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Maria:</p>
-          <p>Muito feliz com os resultados! Luan, você arrasa! Atendimento top!</p>
+        <div class="p-4 bg-gray-100 rounded flex items-start">
+          <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Maria" class="avatar mr-4" />
+          <div>
+            <p class="font-semibold">Maria Oliveira:</p>
+            <p>Muito feliz com os resultados! Luan, você arrasa! Atendimento top!</p>
+          </div>
         </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Carlos:</p>
-          <p>Eu comprei o pacote de 10K seguidores e fiquei impressionado! Luan, parabéns pelo excelente serviço!</p>
+        <div class="p-4 bg-gray-100 rounded flex items-start">
+          <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Carlos" class="avatar mr-4" />
+          <div>
+            <p class="font-semibold">Carlos Souza:</p>
+            <p>Eu comprei o pacote de 10K seguidores e fiquei impressionado! Luan, parabéns pelo excelente serviço!</p>
+          </div>
         </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Fernanda:</p>
-          <p>Luan, muito obrigada pelo atendimento! Meus seguidores chegaram rápido e a qualidade é ótima!</p>
+        <div class="p-4 bg-gray-100 rounded flex items-start">
+          <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Fernanda" class="avatar mr-4" />
+          <div>
+            <p class="font-semibold">Fernanda Costa:</p>
+            <p>Luan, muito obrigada pelo atendimento! Meus seguidores chegaram rápido e a qualidade é ótima!</p>
+          </div>
         </div>
-        <div class="p-4 bg-gray-100 rounded">
-          <p class="font-semibold">Lucas:</p>
-          <p>Super recomendo! O Luan foi super eficiente e meu perfil está bombando agora. Muito obrigado!</p>
+        <div class="p-4 bg-gray-100 rounded flex items-start">
+          <img src="https://randomuser.me/api/portraits/men/7.jpg" alt="Lucas" class="avatar mr-4" />
+          <div>
+            <p class="font-semibold">Lucas Pereira:</p>
+            <p>Super recomendo! O Luan foi super eficiente e meu perfil está bombando agora. Muito obrigado!</p>
+          </div>
         </div>
       </div>
 
